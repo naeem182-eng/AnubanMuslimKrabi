@@ -24,18 +24,37 @@ export default function VideoSection() {
 
         {/* Arrows */}
         <button
-          onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 rounded-full shadow flex justify-center items-center"
-        >
-          ‹
-        </button>
+  onClick={() => scroll("left")}
+  className="
+    hidden md:flex
+    absolute left-0 top-1/2 -translate-y-1/2
+    z-10
+    bg-white
+    w-10 h-10
+    rounded-full
+    shadow
+    items-center justify-center
+  "
+>
+  ‹
+</button>
 
-        <button
-          onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 rounded-full shadow flex justify-center items-center"
-        >
-          ›
-        </button>
+<button
+  onClick={() => scroll("right")}
+  className="
+    hidden md:flex
+    absolute right-0 top-1/2 -translate-y-1/2
+    z-10
+    bg-white
+    w-10 h-10
+    rounded-full
+    shadow
+    items-center justify-center
+  "
+>
+  ›
+</button>
+
 
         {/* Videos */}
         <div

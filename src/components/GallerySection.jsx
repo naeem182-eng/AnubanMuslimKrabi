@@ -22,37 +22,40 @@ export default function GallerySection() {
           {t("latestActivity")}
         </h2>
 
-        {/* Left Arrow */}
-        <button
-          onClick={() => scroll("left")}
-          className="
-            absolute left-0 top-1/2 -translate-y-1/2
-            z-10
-            bg-white shadow-md
-            w-10 h-10
-            rounded-full
-            flex items-center justify-center
-            hover:bg-gray-100
-          "
-        >
-          ‹
-        </button>
+   {/* Left Arrow */}
+<button
+  onClick={() => scroll("left")}
+  className="
+    hidden md:flex
+    absolute left-0 top-1/2 -translate-y-1/2
+    z-10
+    bg-white shadow-md
+    w-10 h-10
+    rounded-full
+    items-center justify-center
+    hover:bg-gray-100
+  "
+>
+  ‹
+</button>
 
-        {/* Right Arrow */}
-        <button
-          onClick={() => scroll("right")}
-          className="
-            absolute right-0 top-1/2 -translate-y-1/2
-            z-10
-            bg-white shadow-md
-            w-10 h-10
-            rounded-full
-            flex items-center justify-center
-            hover:bg-gray-100
-          "
-        >
-          ›
-        </button>
+{/* Right Arrow */}
+<button
+  onClick={() => scroll("right")}
+  className="
+    hidden md:flex
+    absolute right-0 top-1/2 -translate-y-1/2
+    z-10
+    bg-white shadow-md
+    w-10 h-10
+    rounded-full
+    items-center justify-center
+    hover:bg-gray-100
+  "
+>
+  ›
+</button>
+
 
         {/* Gallery */}
         <div

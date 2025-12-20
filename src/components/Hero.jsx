@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="w-full h-[80vh] relative mt-[72px]">
       <img
         src="/hero.jpg"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover" alt = "Dynamic-School"
       />
 
       <div className="absolute inset-0 bg-black/40"></div>
