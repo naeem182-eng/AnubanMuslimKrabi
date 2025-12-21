@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
@@ -12,18 +13,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img src="/logo.jpg" alt="Logo" className="w-12 h-12" />
           <span className="text-xl font-semibold">{t("schoolName")}</span>
-        </div>
+        </Link>
 
         {/* Menu */}
-        <div className="hidden md:flex gap-8 text-lg font-light">
-          <a href="#" className="hover:text-amber-600">{t("home")}</a>
-          <a href="#" className="hover:text-amber-600">{t("about")}</a>
-          <a href="#" className="hover:text-amber-600">{t("admissions")}</a>
-          <a href="#" className="hover:text-amber-600">{t("contact")}</a>
-        </div>
+        <ul className="hidden md:flex gap-8 text-lg font-light">
+          <Link to="/" className="hover:text-amber-600">{t("home")}</Link>
+          <Link to="/about" className="hover:text-amber-600">{t("about")}</Link>
+          <Link to="/admissions"  className="hover:text-amber-600">{t("admissions")}</Link>
+          <Link to="/contactus"  className="hover:text-amber-600">{t("contact")}</Link>
+        </ul>
 
         {/* Language Dropdown */}
         <div className="relative">
