@@ -14,7 +14,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img src="logo.jpg" alt="Logo" className="w-12 h-12" />
+          <img src="/logo.jpg" alt="Logo" className="w-12 h-12" />
           <span className="text-xl font-semibold">{t("schoolName")}</span>
         </Link>
 
