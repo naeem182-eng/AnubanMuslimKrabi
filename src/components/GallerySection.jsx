@@ -1,10 +1,12 @@
 import { useRef } from "react";
 import { images } from "../data/images";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 export default function GallerySection() {
   const scrollRef = useRef(null);
   const { t } = useTranslation();
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const scroll = (direction) => {
     const scrollAmount = 260; // ระยะเลื่อนต่อคลิก
@@ -63,10 +65,12 @@ export default function GallerySection() {
           className="
             flex gap-6
             overflow-hidden
+            overflow-x-auto
+            no-scrollbar
             px-12
           "
         >
-          {images.map((image) => (
+          {images.map((image, index) => (
             <div
               key={image.id}
               className="
@@ -78,17 +82,46 @@ export default function GallerySection() {
               "
             >
               <div className="aspect-square overflow-hidden rounded-2xl">
-                <img
+                <img onClick={() => setActiveIndex(index)}
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer"
                 />
               </div>
             </div>
           ))}
-        </div>
 
+        {/*Modal Viewer*/}
+        </div>
+        {activeIndex !== null && (
+          <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+          onClick={() => setActiveIndex(null)}>
+
+          {/* Content wrapper */}
+          <div
+          className="relative flex items-center justify-center"
+          onClick={(e) => e.stopPropagation()} // ❗ กันเด้งทั้งหมด
+          >
+
+          {/* Close */}
+          <button onClick={() => setActiveIndex(null)} className="absolute top-4 right-4 text-white text-3xl" > ✕
+            </button>
+
+          {/* Prev */}
+          {activeIndex > 0 && ( <button onClick={() => setActiveIndex(activeIndex - 1)} className="absolute left-4 text-white text-4xl" > ‹ </button>
+           )}
+
+          {/* Image */}
+          <img src={images[activeIndex].src}
+          className="max-h-[90vh] max-w-[90vw] rounded-xl" />
+
+          {/* Next */}
+          {activeIndex < images.length - 1 && ( <button onClick={() => setActiveIndex(activeIndex + 1)} className="absolute right-4 text-white text-4xl" > › </button> 
+          )}
+        </div>
       </div>
+      )}</div>
     </section>
   );
 }

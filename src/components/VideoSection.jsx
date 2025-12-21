@@ -22,7 +22,7 @@ export default function VideoSection() {
           {t("video")}
         </h2>
 
-        {/* Arrows */}
+        {/* left Arrows */}
         <button
   onClick={() => scroll("left")}
   className="
@@ -39,6 +39,7 @@ export default function VideoSection() {
   ‹
 </button>
 
+{/* Right Arrow */}
 <button
   onClick={() => scroll("right")}
   className="
@@ -59,7 +60,7 @@ export default function VideoSection() {
         {/* Videos */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-hidden px-12"
+          className="flex gap-6 overflow-hidden overflow-x-auto no-scrollbar px-12"
         >
           {videos.map(video => (
             <div
@@ -69,7 +70,6 @@ export default function VideoSection() {
                 w-[360px]
                 bg-white
                 rounded-2xl
-                overflow-hidden
                 shadow-sm
               "
             >
