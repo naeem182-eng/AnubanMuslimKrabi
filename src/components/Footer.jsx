@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 export default function Footer() {
     const { t } = useTranslation();
   return (
-    <footer className="bg-[#e1b59b] text-white py-12">
+    <footer id="about-us" className="bg-[#e1b59b] text-white py-12">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
 
         {/* Left section */}

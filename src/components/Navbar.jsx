@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
@@ -21,9 +22,9 @@ export default function Navbar() {
         {/* Menu */}
         <ul className="hidden md:flex gap-8 text-lg font-light">
           <Link to="/" className="hover:text-amber-600">{t("home")}</Link>
-          <Link to="/about" className="hover:text-amber-600">{t("about")}</Link>
+          <a href="#about-us" className="hover:text-amber-600">{t("about")}</a>
           <Link to="/admissions"  className="hover:text-amber-600">{t("admissions")}</Link>
-          <Link to="/contactus"  className="hover:text-amber-600">{t("contact")}</Link>
+          <a href="#about-us"  className="hover:text-amber-600">{t("contact")}</a>
         </ul>
 
         {/* Language Dropdown */}
