@@ -27,7 +27,10 @@ export default function Footer() {
 
             <li className="flex items-center gap-3">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/250px-Facebook_Logo_%282019%29.png" alt="Facebook" className="w-8 h-8" />
-              <a href="https://www.facebook.com/AnubanMuslimKrabiSchool/?locale=th_TH">
+              <a href="https://www.facebook.com/AnubanMuslimKrabiSchool/?locale=th_TH"
+              onClick={() => {
+              window.gtag?.('event', 'click_line');
+              }}>
                 {t("schoolName")}
               </a>
             </li>
@@ -47,7 +50,10 @@ export default function Footer() {
           </p>
 
           <p className="mt-4">
-            <a href="https://maps.app.goo.gl/LW74kDksanPhupwL6">🗺️{t("googleMap")}</a>
+            <a href="https://maps.app.goo.gl/LW74kDksanPhupwL6">🗺️{t("googleMap")}
+            onClick={() => {
+            window.gtag?.('event', 'click_map');
+            }}</a>
           </p>
 
           <p className="mt-4">
@@ -55,6 +61,9 @@ export default function Footer() {
             <a
               href="k.anantaya@gmail.com"
               className="underline"
+              onClick={() => {
+              window.gtag?.('event', 'click_email');
+              }}
             >k.anantaya@gmail.com
             </a>
           </p>
