@@ -15,10 +15,16 @@ export default function Footer() {
           </h3>
 
           <ul className="space-y-4">
-            <li className="flex items-center gap-3">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/LINE_New_App_Icon_%282020-12%29.png" alt="LINE" className="w-8 h-8" />
-              <span>087 902 4963</span>
-            </li>
+             <li className="flex items-center gap-3">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2e/LINE_New_App_Icon_%282020-12%29.png"
+                alt="LINE"
+                className="w-8 h-8"
+              />
+              <a href="tel:0879024963" className="underline">
+              087 902 4963
+              </a>
+              </li>
 
             <li className="flex items-center gap-3">
               <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" className="w-8 h-8" />
@@ -50,25 +56,25 @@ export default function Footer() {
           </p>
 
           <p className="mt-4">
-            <a href="https://maps.app.goo.gl/LW74kDksanPhupwL6">🗺️{t("googleMap")}
+            <a href="https://maps.app.goo.gl/LW74kDksanPhupwL6"
             onClick={() => {
             window.gtag?.('event', 'click_map');
-            }}</a>
+            }}>🗺️{t("googleMap")}</a>
           </p>
 
           <p className="mt-4">
             E-mail :
             <a
-              href="k.anantaya@gmail.com"
-              className="underline"
-              onClick={() => {
-              window.gtag?.('event', 'click_email');
-              }}
-            >k.anantaya@gmail.com
+            href="mailto:k.anantaya@gmail.com"
+            className="underline"
+            onClick={() => {
+            window.gtag?.('event', 'click_email');
+            }}
+            >
+            k.anantaya@gmail.com
             </a>
           </p>
         </div>
-
       </div>
     </footer>
   );
